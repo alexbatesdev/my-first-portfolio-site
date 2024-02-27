@@ -7,19 +7,19 @@ export const theme = createTheme({
     palette: {
         mode: 'dark',
         primary: {
-            main: '#8d7eff',  // Was secondary color (a pastel purple)
+            main: '#55b6ff',
         },
         secondary: {
-            main: '#efd708',  // New tertiary color (a bright cyan)
+            main: '#fff14c',
         },
         tertiary: {
-            main: '#364EE0',  // New secondary color (a brilliant blue)
+            main: '#ab75ff',
         },
         background: {
             default: '#1C0C3B',
-            paper: '#300F62',
+            paper: '#1f2269',
             paperLight: '#4C1E91',
-            alternate: '#200958',
+            alternate: '#0a112e',
             alternateDark: '#0e073a',
         },
         dragBar: {

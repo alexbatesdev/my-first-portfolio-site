@@ -1,27 +1,15 @@
-import React, { useRef } from 'react'
+import React, { useEffect, useRef } from 'react'
 import { useTheme } from '@emotion/react'
 import { Typography, Link } from '@mui/material';
-
-
-// React Icon
-import DevicesIcon from '@mui/icons-material/Devices';
-// Users Icon
-import PeopleIcon from '@mui/icons-material/People';
-// Fastapi Icon
-import BoltIcon from '@mui/icons-material/Bolt';
-// MongoDB Icon
-import SpaIcon from '@mui/icons-material/Spa';
-// External Resources Icon
-import LanguageIcon from '@mui/icons-material/Language';
+import TechBadge from './TechBadge';
 
 const TechStackPanel = () => {
     const theme = useTheme();
-
+    const [whichDomainIsHovered, setWhichDomainIsHovered] = React.useState(0);
 
     return (<>
         <div
             style={{
-                // width: "550px",
                 display: 'flex',
                 flexDirection: 'column',
                 justifyContent: 'flex-start',
@@ -33,114 +21,124 @@ const TechStackPanel = () => {
                 fontFamily: 'Teko',
                 color: theme.palette.text.primary,
             }}>
-                Skills
-            </Typography>
-            <Typography variant='h6' style={{
-                color: theme.palette.text.primary,
-                marginLeft: '1rem',
-            }}>
-                I have experience using the following technologies
+                Technology and Tools
             </Typography>
             <div style={{
                 display: 'flex',
                 flexDirection: 'row',
+                justifyContent: 'center',
+                alignItems: 'center',
+                gap: '1rem',
+                paddingBottom: '1rem',
             }}>
-                <div style={{
-                    padding: '1rem',
-                }}>
-                    <Typography variant='h4' style={{
-                        fontFamily: 'Teko',
+                <Typography variant='h5'
+                    onMouseEnter={() => setWhichDomainIsHovered(1)}
+                    onMouseLeave={() => setWhichDomainIsHovered(0)}
+                    style={{
                         color: theme.palette.text.primary,
+                        backgroundColor: whichDomainIsHovered === 1 ? "#486ee269" : "#a5a5a533",
+                        borderRadius: "10px",
+                        padding: '0.25rem 0.75rem',
+                        transition: "all 0.3s ease-in-out",
+                        cursor: "pointer",
+                        boxShadow: "0px 0px 7px -3px black",
                     }}>
-                        Frontend
-                    </Typography>
-                    <Typography variant='body1' style={{
+                    Front-End
+                </Typography>
+                <Typography variant='h5'
+                    onMouseEnter={() => setWhichDomainIsHovered(2)}
+                    onMouseLeave={() => setWhichDomainIsHovered(0)}
+                    style={{
                         color: theme.palette.text.primary,
-                        marginLeft: '1rem',
+                        backgroundColor: whichDomainIsHovered === 2 ? "#2bd01373" : "#a5a5a533",
+                        borderRadius: "10px",
+                        padding: '0.25rem 0.75rem',
+                        transition: "all 0.3s ease-in-out",
+                        cursor: "pointer",
+                        boxShadow: "0px 0px 7px -3px black",
                     }}>
-                        HTML/CSS/JS
-                    </Typography>
-                    <Typography variant='body1' style={{
+                    Back-End
+                </Typography>
+                <Typography variant='h5'
+                    onMouseEnter={() => setWhichDomainIsHovered(3)}
+                    onMouseLeave={() => setWhichDomainIsHovered(0)}
+                    style={{
                         color: theme.palette.text.primary,
-                        marginLeft: '1rem',
+                        backgroundColor: whichDomainIsHovered === 3 ? "#a8171778" : "#a5a5a533",
+                        borderRadius: "10px",
+                        padding: '0.25rem 0.75rem',
+                        transition: "all 0.3s ease-in-out",
+                        cursor: "pointer",
+                        boxShadow: "0px 0px 7px -3px black",
                     }}>
-                        <Link href={"https://react.dev"} target='_blank' style={{
-                            color: theme.palette.secondary.main,
-                            textDecorationColor: theme.palette.secondary.main
-                        }}>React</Link>
-                    </Typography>
-                    <Typography variant='body1' style={{
-                        color: theme.palette.text.primary,
-                        marginLeft: '1rem',
-                    }}>
-                        <Link href={"https://nextjs.org"} target='_blank' style={{
-                            color: theme.palette.secondary.main,
-                            textDecorationColor: theme.palette.secondary.main
-                        }}>Next.JS</Link>
-                    </Typography>
-                    <Typography variant='body1' style={{
-                        color: theme.palette.text.primary,
-                        marginLeft: '1rem',
-                    }}>
-                        <Link href={"https://mui.com"} target='_blank' style={{
-                            color: theme.palette.secondary.main,
-                            textDecorationColor: theme.palette.secondary.main
-                        }}>Material UI</Link> (remove?)
-                    </Typography>
-                    and more to be added!
-                </div>
-                <div style={{
-                    padding: '1rem',
-                }}>
-                    <Typography variant='h4' style={{
-                        fontFamily: 'Teko',
-                        color: theme.palette.text.primary,
-                    }}>
-                        Backend
-                    </Typography>
-                    <Typography variant='body1' style={{
-                        color: theme.palette.text.primary,
-                        marginLeft: '1rem',
-                    }}>
-                        <Link href={"https://fastapi.tiangolo.com"} target='_blank' style={{
-                            color: theme.palette.secondary.main,
-                            textDecorationColor: theme.palette.secondary.main
-                        }}>Fastapi</Link>
-                    </Typography>
-                    <Typography variant='body1' style={{
-                        color: theme.palette.text.primary,
-                        marginLeft: '1rem',
-                    }}>
-                        Docker
-                    </Typography>
-                    <Typography variant='body1' style={{
-                        color: theme.palette.text.primary,
-                        marginLeft: '1rem',
-                    }}>
-                        Kubernetes
-                    </Typography>
-                    <Typography variant='body1' style={{
-                        color: theme.palette.text.primary,
-                        marginLeft: '1rem',
-                    }}>
-                        AWS
-                    </Typography>
-                    <Typography variant='body1' style={{
-                        color: theme.palette.text.primary,
-                        marginLeft: '1rem',
-                    }}>
-                        <Link href={"https://www.mongodb.com"} target='_blank' style={{
-                            color: theme.palette.secondary.main,
-                            textDecorationColor: theme.palette.secondary.main
-                        }}>MongoDB</Link>
-                    </Typography>
-                    <Typography variant='body1' style={{
-                        color: theme.palette.text.primary,
-                        marginLeft: '1rem',
-                    }}>
-                        MySQL
-                    </Typography>
-                </div>
+                    DevOps
+                </Typography>
+            </div>
+            <div style={{
+                display: 'flex',
+                flexDirection: 'row',
+                justifyContent: 'center',
+                alignItems: 'center',
+                padding: '10px',
+                gap: '1rem',
+                width: "60%",
+                flexWrap: 'wrap',
+            }}>
+                <TechBadge label='React' icon='/react.svg'
+                    source={'https://2022.stateofjs.com/en-US/libraries/front-end-frameworks/'}
+                    source_name={'State of JS'}
+                    highlight_color={whichDomainIsHovered == 1 ? "#486ee269" : null} />
+                <TechBadge label='Next.JS' icon='/next-js.svg'
+                    source={'https://2022.stateofjs.com/en-US/libraries/rendering-frameworks/'}
+                    source_name={'State of JS'}
+                    highlight_color={whichDomainIsHovered == 1 ? "#486ee269" :
+                        whichDomainIsHovered == 2 ? "#2bd01373" : null} />
+                <TechBadge label='AWS' icon='/aws.svg'
+                    source={"https://www.statista.com/chart/18819/worldwide-market-share-of-leading-cloud-infrastructure-service-providers/"}
+                    source_name={"Statista"}
+                    highlight_color={
+                        whichDomainIsHovered == 2 ? "#2bd01373" :
+                            whichDomainIsHovered == 3 ? "#a8171778" : null} />
+                <TechBadge label='Docker' icon='/docker.svg'
+                    highlight_color={whichDomainIsHovered == 2 ? "#2bd01373" :
+                        whichDomainIsHovered == 3 ? "#a8171778" : null} />
+                <TechBadge label='Kubernetes' icon='/k8s.svg'
+                    highlight_color={whichDomainIsHovered == 3 ? "#a8171778" : null} />
+                <TechBadge label='.NET' icon='/dotnet-logo.svg'
+                    highlight_color={whichDomainIsHovered == 2 ? "#2bd01373" : null} />
+                <TechBadge label='Fastapi' icon='/fastapi.svg'
+                    highlight_color={whichDomainIsHovered == 2 ? "#2bd01373" : null} />
+                <TechBadge label='MongoDB' icon='/mongodb-plain.svg'
+                    highlight_color={whichDomainIsHovered == 2 ? "#2bd01373" : null} />
+                <TechBadge label='CSS' icon='/css.svg'
+                    highlight_color={whichDomainIsHovered == 1 ? "#486ee269" : null} />
+                <TechBadge label='Postman' icon='/getpostman-icon.svg'
+                    highlight_color={whichDomainIsHovered == 2 ? "#2bd01373" : null} />
+                <TechBadge label='Git' icon='/git-plain.svg'
+                    highlight_color={whichDomainIsHovered == 1 ? "#486ee269" :
+                        whichDomainIsHovered == 2 ? "#2bd01373" :
+                            whichDomainIsHovered == 3 ? "#a8171778" : null} />
+                <TechBadge label='HTML' icon='/html5-original.svg'
+                    highlight_color={whichDomainIsHovered == 1 ? "#486ee269" : null} />
+                <TechBadge label='JavaScript' icon='/javascript.svg'
+                    highlight_color={whichDomainIsHovered == 1 ? "#486ee269" :
+                        whichDomainIsHovered == 2 ? "#2bd01373" : null} />
+                <TechBadge label='TypeScript' icon='/typescript.svg'
+                    highlight_color={whichDomainIsHovered == 1 ? "#486ee269" :
+                        whichDomainIsHovered == 2 ? "#2bd01373" : null} />
+                <TechBadge label='Python' icon='/python.svg'
+                    highlight_color={whichDomainIsHovered == 2 ? "#2bd01373" : null} />
+                <TechBadge label='MySQL' icon='/mysql.webp'
+                    highlight_color={whichDomainIsHovered == 2 ? "#2bd01373" : null} />
+                <TechBadge label='node-js' icon='/node-js.svg'
+                    highlight_color={whichDomainIsHovered == 1 ? "#486ee269" :
+                        whichDomainIsHovered == 2 ? "#2bd01373" : null} />
+                <TechBadge label='Redis' icon='/redis.webp'
+                    highlight_color={whichDomainIsHovered == 2 ? "#2bd01373" : null} />
+                <TechBadge label='Vite' icon='/vite.svg'
+                    highlight_color={whichDomainIsHovered == 1 ? "#486ee269" : null} />
+                <TechBadge label='SQL' icon='/sql.webp'
+                    highlight_color={whichDomainIsHovered == 2 ? "#2bd01373" : null} />
             </div>
         </div >
     </>

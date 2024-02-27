@@ -14,8 +14,10 @@ const FrontScreen = () => {
             height: active ? '80px' : '40px',
             clipPath: !active ? 'polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%)' : 'polygon(0 100%, 0 0, 0 0, 100% 0, 100% 0, 100% 100%, 100% 100%, 100% 100%, 0 100%, 0 100%)',
             transition: 'all 0.3s ease',
+            color: 'transparent',
         };
         style = { ...style, ...position };
+        if (active) style['backgroundColor'] = theme.palette.background.alternate;
         return style;
     }
 
@@ -46,6 +48,7 @@ const FrontScreen = () => {
                     width: '100%',
                     height: '100%',
                     opacity: 0.8,
+                    transform: 'rotate(180deg)',
                 }} />
             </div>
             <style>
@@ -79,7 +82,7 @@ const FrontScreen = () => {
                 <div style={techCardStyle({
                     top: '-40%',
                     left: '30%',
-                    backgroundColor: 'green',
+                    backgroundColor: theme.palette.tertiary.main,
                     animation: 'floatBackend 5s ease-in-out infinite'
                 },
                     slabHover === 2
@@ -87,9 +90,9 @@ const FrontScreen = () => {
                     MySQL
                 </div>
                 <div style={techCardStyle({
-                    top: '-5%',
+                    top: '0%',
                     right: '-5%',
-                    backgroundColor: 'green',
+                    backgroundColor: theme.palette.tertiary.main,
                     animation: 'floatBackend 5s ease-in-out infinite'
                 },
                     slabHover === 2
@@ -99,7 +102,7 @@ const FrontScreen = () => {
                 <div style={techCardStyle({
                     top: '-10%',
                     left: '10%',
-                    backgroundColor: 'blue',
+                    backgroundColor: theme.palette.primary.main,
                     animation: 'floatFrontend 8s ease-in-out infinite',
                 },
                     slabHover === 1
@@ -107,9 +110,9 @@ const FrontScreen = () => {
                     Node
                 </div>
                 <div style={techCardStyle({
-                    top: '-20%',
+                    top: '-10%',
                     right: '20%',
-                    backgroundColor: 'red',
+                    backgroundColor: theme.palette.secondary.main,
                     animation: 'floatDevops 6s ease-in-out infinite',
                 },
                     slabHover === 3
@@ -119,7 +122,7 @@ const FrontScreen = () => {
                 <div style={techCardStyle({
                     bottom: '-23%',
                     left: '5%',
-                    backgroundColor: 'red',
+                    backgroundColor: theme.palette.secondary.main,
                     animation: 'floatDevops 6s ease-in-out infinite',
                 },
                     slabHover === 3
@@ -129,7 +132,7 @@ const FrontScreen = () => {
                 <div style={techCardStyle({
                     bottom: '-50%',
                     right: '5%',
-                    backgroundColor: 'red',
+                    backgroundColor: theme.palette.secondary.main,
                     animation: 'floatDevops 6s ease-in-out infinite',
                 },
                     slabHover === 3
@@ -139,7 +142,7 @@ const FrontScreen = () => {
                 <div style={techCardStyle({
                     bottom: '-60%',
                     left: '20%',
-                    backgroundColor: 'green',
+                    backgroundColor: theme.palette.tertiary.main,
                     animation: 'floatBackend 5s ease-in-out infinite'
                 },
                     slabHover === 2
@@ -149,7 +152,7 @@ const FrontScreen = () => {
                 <div style={techCardStyle({
                     bottom: '-70%',
                     right: '30%',
-                    backgroundColor: 'green',
+                    backgroundColor: theme.palette.tertiary.main,
                     animation: 'floatBackend 5s ease-in-out infinite'
                 },
                     slabHover === 2
@@ -159,7 +162,7 @@ const FrontScreen = () => {
                 <div style={techCardStyle({
                     bottom: '-40%',
                     right: '50%',
-                    backgroundColor: 'blue',
+                    backgroundColor: theme.palette.primary.main,
                     animation: 'floatFrontend 8s ease-in-out infinite',
                 },
                     slabHover === 1
@@ -167,9 +170,9 @@ const FrontScreen = () => {
                     Next.JS
                 </div>
                 <div style={techCardStyle({
-                    top: '-60%',
+                    top: '-45%',
                     right: '5%',
-                    backgroundColor: 'blue',
+                    backgroundColor: theme.palette.primary.main,
                     animation: 'floatFrontend 8s ease-in-out infinite',
                 },
                     slabHover === 1
@@ -203,18 +206,19 @@ const FrontScreen = () => {
                     <span style={{
                         display: slabHover == 3 ? 'inline-block' : 'none',
                     }}>
-                        DevOps Admin
+                        DevOps Engineer
+                    </span>
+                    <span style={{ display: 'none' }}>
+                        Back-End Developer
                     </span>
                 </Typography>
                 <Typography variant='h6' style={{
                     color: theme.palette.text.primary,
                     width: '550px',
-
                 }}>
-                    Bro you would not believe how much I know and love to code. I be making those backends and I be making those frontends, and I be making the boats that they ship on.
+                    I am a skilled fullstack developer with experience in frontend, backend, and devops. I have a passion for learning new technologies and solving complex problems.
                 </Typography>
             </div>
-
             <div id='slab-stack' style={{
                 zIndex: 1,
                 position: 'relative',

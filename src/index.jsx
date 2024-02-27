@@ -29,10 +29,9 @@ export default function Home() {
       }}>
         <FrontScreen />
         <div
-          id="Templates"
+          id="About"
           style={{
             width: "100%",
-            height: "25vh",
             display: 'flex',
             flexDirection: 'column',
             justifyContent: 'flex-start',
@@ -40,16 +39,29 @@ export default function Home() {
             outline: "solid 4px " + theme.palette.background.alternate,
             outlineOffset: "4px",
             backgroundColor: theme.palette.background.alternate,
-            zIndex: 1
+            zIndex: 1,
+            padding: '1rem 0',
           }}>
           <Typography variant='h3' style={{
             color: theme.palette.text.primary,
             fontFamily: 'Teko',
-            padding: '1rem',
-            marginTop: "10px",
             textAlign: 'center',
           }}>
-            About
+            About Me
+          </Typography>
+          <Typography variant='h5' style={{
+            color: "#e0e0ff",
+            textAlign: 'left',
+            width: '80%',
+            fontSize: '1.25rem',
+            marginBottom: '1rem',
+          }}>
+            I am a full-stack web developer with a love for everything computer science!
+            My relationship with computers started when my Dad showed me the Nintendo 64 game Ocarina of Time
+            running on his computer I was 9 years old, from that day on I have been enthralled by the world of computers.
+            Ever since I have been learning everything I can about them, whether its emulating games, making websites, or
+            programming a raspberry pi to be a voice assistant. Outside of programming I like to play video games,
+            work on my car, and go hiking and rock climbing.
           </Typography>
         </div>
         <div
@@ -57,7 +69,6 @@ export default function Home() {
           style={{
             backgroundColor: theme.palette.background.paper,
             width: "100%",
-            height: "70vh",
             outline: "solid 4px " + theme.palette.background.paper,
             outlineOffset: "4px",
             zIndex: 2,
@@ -68,7 +79,7 @@ export default function Home() {
         <div
           id='Footer'
           style={{
-            backgroundColor: "#130925",
+            backgroundColor: theme.palette.background.alternate,
             width: "100%",
             display: 'flex',
             flexDirection: 'row',
