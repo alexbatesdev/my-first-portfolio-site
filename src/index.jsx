@@ -14,27 +14,11 @@ import LinkedInIcon from '@mui/icons-material/LinkedIn';
 export default function Home() {
   const theme = useTheme()
 
-  const iconDivStyle = (isHovering = false) => {
-    const hoverBG = (isHovering) => isHovering ? theme.palette.background.paper : theme.palette.background.default;
-    return {
-      minWidth: "50px",
-      height: "50px",
-      display: "flex",
-      flexDirection: "row",
-      justifyContent: "center",
-      alignItems: "center",
-      color: theme.palette.text.primary,
-    }
-  };
+  const [slabHover, setSlabHover] = React.useState(0);
 
-  const collapseStyle = (isHovering = false) => {
-    const hoverBG = (isHovering) => isHovering ? theme.palette.background.paper : theme.palette.background.default;
-    return {
-      color: theme.palette.text.primary,
-      height: '50px',
-      position: "relative",
-    }
-  };
+  useEffect(() => {
+    console.log('slabHover:', slabHover)
+  }, [slabHover])
 
   return (
     <>
@@ -70,31 +54,7 @@ export default function Home() {
             backgroundColor: theme.palette.background.default,
             overflow: 'hidden',
           }}>
-            <style>
-              {`
-                @keyframes rotate {
-                  from {
-                    transform: rotate(0deg);
-                  }
-                  to {
-                    transform: rotate(360deg);
-                  }
-                }
-                `}
-            </style>
-            <div style={{
-              position: 'absolute',
-              left: "calc(50% - 125vw)",
-              top: "calc(50% - 125vh)",
-              width: '250vw',
-              height: '250vh',
-              backgroundImage: 'url(/spiderweb.svg)',
-              backgroundSize: '110vw',
-              backgroundRepeat: 'no-repeat',
-              backgroundPosition: 'center',
-              backgroundColor: theme.palette.background.default,
-              animation: 'rotate 120s infinite linear',
-            }}></div>
+
           </div>
           <IndexTopBar />
           <div style={{
@@ -110,10 +70,26 @@ export default function Home() {
               <span style={{ color: theme.palette.primary.main }}>
                 Alex Bates
               </span> <br />
-              Full-Stack Developer, <br />
-              Front-End Developer, <br />
-              Back-End Developer, <br />
-              DevOps Engineer, <br />
+              <span style={{
+                display: slabHover == 0 ? 'inline-block' : 'none',
+              }}>
+                Full-Stack Developer
+              </span>
+              <span style={{
+                display: slabHover == 1 ? 'inline-block' : 'none',
+              }}>
+                Front-End Developer
+              </span>
+              <span style={{
+                display: slabHover == 2 ? 'inline-block' : 'none',
+              }}>
+                Back-End Developer
+              </span>
+              <span style={{
+                display: slabHover == 3 ? 'inline-block' : 'none',
+              }}>
+                DevOps Engineer
+              </span>
             </Typography>
             <Typography variant='h6' style={{
               color: theme.palette.text.primary,
@@ -122,6 +98,70 @@ export default function Home() {
             }}>
               Bro you would not believe how much I know and love to code. I be making those backends and I be making those frontends, and I be making the boats that they ship on.
             </Typography>
+          </div>
+          <div id='slab-stack' style={{
+            zIndex: 1,
+            position: 'relative',
+            display: 'flex',
+            flexDirection: 'column',
+            justifyContent: 'center',
+            alignItems: 'center',
+          }}>
+            <style>
+              {`
+              @keyframes floatFrontend {
+                0%, 100% { transform: translateY(0); }
+                50% { transform: translateY(-20px); }
+              }
+              
+              @keyframes floatBackend {
+                0%, 100% { transform: translateY(0); }
+                50% { transform: translateY(-15px); }
+              }
+              
+              @keyframes floatDevops {
+                0%, 100% { transform: translateY(0); }
+                50% { transform: translateY(-10px); }
+              }
+              `}
+            </style>
+            <img src={slabHover === 1 ? '/activeBlueSlab.png' : '/inactiveBlueSlab.png'}
+              id='frontend-slab'
+              style={{
+                width: '500px',
+                animation: 'floatFrontend 6s ease-in-out infinite',
+                position: 'relative',
+                bottom: '-150px',
+                zIndex: 3,
+                clipPath: 'polygon(45% 0, 55% 0, 100% 45%, 100% 60%, 55% 100%, 45% 100%, 0 60%, 0 45%)',
+              }}
+              onMouseEnter={() => setSlabHover(1)}
+              onMouseLeave={() => setSlabHover(0)}
+            />
+            <img src={slabHover === 2 ? '/activeGreenSlab.png' : '/inactiveBlueSlab.png'}
+              id='backend-slab'
+              style={{
+                width: '500px',
+                animation: 'floatBackend 4s ease-in-out infinite',
+                zIndex: 2,
+                clipPath: 'polygon(45% 0, 55% 0, 100% 45%, 100% 60%, 55% 100%, 45% 100%, 0 60%, 0 45%)',
+              }}
+              onMouseEnter={() => setSlabHover(2)}
+              onMouseLeave={() => setSlabHover(0)}
+            />
+            <img src={slabHover === 3 ? '/activeRedSlab.png' : '/inactiveBlueSlab.png'}
+              id='devops-slab'
+              style={{
+                width: '500px',
+                animation: 'floatDevops 5s ease-in-out infinite',
+                position: 'relative',
+                top: '-150px',
+                zIndex: 1,
+                clipPath: 'polygon(45% 0, 55% 0, 100% 45%, 100% 60%, 55% 100%, 45% 100%, 0 60%, 0 45%)',
+              }}
+              onMouseEnter={() => setSlabHover(3)}
+              onMouseLeave={() => setSlabHover(0)}
+            />
           </div>
         </div>
         <div

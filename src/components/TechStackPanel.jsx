@@ -21,7 +21,7 @@ const TechStackPanel = () => {
     return (<>
         <div
             style={{
-                width: "550px",
+                // width: "550px",
                 display: 'flex',
                 flexDirection: 'column',
                 justifyContent: 'flex-start',
