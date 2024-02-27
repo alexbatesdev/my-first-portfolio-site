@@ -14,7 +14,12 @@ const FrontScreen = () => {
             height: active ? '80px' : '40px',
             clipPath: !active ? 'polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%)' : 'polygon(0 100%, 0 0, 0 0, 100% 0, 100% 0, 100% 100%, 100% 100%, 100% 100%, 0 100%, 0 100%)',
             transition: 'all 0.3s ease',
-            color: 'transparent',
+            color: 'white',
+            borderRadius: '10px',
+            display: 'flex',
+            flexDirection: 'column',
+            justifyContent: 'center',
+            alignItems: 'center',
         };
         style = { ...style, ...position };
         if (active) style['backgroundColor'] = theme.palette.background.alternate;
@@ -87,7 +92,11 @@ const FrontScreen = () => {
                 },
                     slabHover === 2
                 )}>
-                    MySQL
+                    {slabHover === 2 && <img src='mysql.webp' style={{
+                        width: '80%',
+                        aspectRatio: '1/1',
+                    }} />}
+
                 </div>
                 <div style={techCardStyle({
                     top: '0%',
@@ -97,7 +106,10 @@ const FrontScreen = () => {
                 },
                     slabHover === 2
                 )}>
-                    MongoDB
+                    {slabHover === 2 && <img src='dotnet-logo.svg' style={{
+                        width: '80%',
+                        aspectRatio: '1/1',
+                    }} />}
                 </div>
                 <div style={techCardStyle({
                     top: '-10%',
@@ -107,7 +119,10 @@ const FrontScreen = () => {
                 },
                     slabHover === 1
                 )}>
-                    Node
+                    {slabHover === 1 && <img src='node-js.svg' style={{
+                        width: '80%',
+                        aspectRatio: '1/1',
+                    }} />}
                 </div>
                 <div style={techCardStyle({
                     top: '-10%',
@@ -117,7 +132,10 @@ const FrontScreen = () => {
                 },
                     slabHover === 3
                 )}>
-                    AWS
+                    {slabHover === 3 && <img src='aws.svg' style={{
+                        width: '80%',
+                        aspectRatio: '1/1',
+                    }} />}
                 </div>
                 <div style={techCardStyle({
                     bottom: '-23%',
@@ -127,7 +145,10 @@ const FrontScreen = () => {
                 },
                     slabHover === 3
                 )}>
-                    Docker
+                    {slabHover === 3 && <img src='docker.svg' style={{
+                        width: '80%',
+                        aspectRatio: '1/1',
+                    }} />}
                 </div>
                 <div style={techCardStyle({
                     bottom: '-50%',
@@ -137,7 +158,10 @@ const FrontScreen = () => {
                 },
                     slabHover === 3
                 )}>
-                    Kubernetes
+                    {slabHover === 3 && <img src='k8s.svg' style={{
+                        width: '80%',
+                        aspectRatio: '1/1',
+                    }} />}
                 </div>
                 <div style={techCardStyle({
                     bottom: '-60%',
@@ -147,7 +171,10 @@ const FrontScreen = () => {
                 },
                     slabHover === 2
                 )}>
-                    Fastapi
+                    {slabHover === 2 && <img src='fastapi.svg' style={{
+                        width: '80%',
+                        aspectRatio: '1/1',
+                    }} />}
                 </div>
                 <div style={techCardStyle({
                     bottom: '-70%',
@@ -157,7 +184,10 @@ const FrontScreen = () => {
                 },
                     slabHover === 2
                 )}>
-                    .NET
+                    {slabHover === 2 && <img src='mongodb.svg' style={{
+                        width: '80%',
+                        aspectRatio: '1/1',
+                    }} />}
                 </div>
                 <div style={techCardStyle({
                     bottom: '-40%',
@@ -167,7 +197,10 @@ const FrontScreen = () => {
                 },
                     slabHover === 1
                 )}>
-                    Next.JS
+                    {slabHover === 1 && <img src='next-js.svg' style={{
+                        width: '80%',
+                        aspectRatio: '1/1',
+                    }} />}
                 </div>
                 <div style={techCardStyle({
                     top: '-45%',
@@ -177,7 +210,10 @@ const FrontScreen = () => {
                 },
                     slabHover === 1
                 )}>
-                    React
+                    {slabHover === 1 && <img src='react.svg' style={{
+                        width: '80%',
+                        aspectRatio: '1/1',
+                    }} />}
                 </div>
                 <Typography variant='h1' style={{
                     fontFamily: 'Teko',

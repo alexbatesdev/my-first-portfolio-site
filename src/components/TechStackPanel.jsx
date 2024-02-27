@@ -108,7 +108,7 @@ const TechStackPanel = () => {
                     highlight_color={whichDomainIsHovered == 2 ? "#2bd01373" : null} />
                 <TechBadge label='Fastapi' icon='/fastapi.svg'
                     highlight_color={whichDomainIsHovered == 2 ? "#2bd01373" : null} />
-                <TechBadge label='MongoDB' icon='/mongodb-plain.svg'
+                <TechBadge label='MongoDB' icon='/mongodb.svg'
                     highlight_color={whichDomainIsHovered == 2 ? "#2bd01373" : null} />
                 <TechBadge label='CSS' icon='/css.svg'
                     highlight_color={whichDomainIsHovered == 1 ? "#486ee269" : null} />
