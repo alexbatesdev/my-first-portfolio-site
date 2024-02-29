@@ -2,7 +2,7 @@ import React from "react";
 import { useTheme } from "@mui/material";
 import { Typography } from "@mui/material";
 import { Button } from "@mui/material";
-import FooterContactBadge from './FooterContactBadge'
+import ContactBadge from './ContactBadge'
 
 import EmailIcon from '@mui/icons-material/Email';
 import GitHubIcon from '@mui/icons-material/GitHub';
@@ -119,9 +119,9 @@ const IndexTopBar = () => {
                 alignItems: 'center',
 
             }}>
-                <FooterContactBadge Icon={EmailIcon} text='AlexBates.Dev@gmail.com' copyOnClick />
-                <FooterContactBadge Icon={LinkedInIcon} text='AlexBatesDev' url='https://www.linkedin.com/in/alexbatesdev/' />
-                <FooterContactBadge Icon={GitHubIcon} text='Mcbuzzerr' url='https://github.com/mcbuzzerr' />
+                <ContactBadge Icon={EmailIcon} text='AlexBates.Dev@gmail.com' copyOnClick />
+                <ContactBadge Icon={LinkedInIcon} text='AlexBatesDev' url='https://www.linkedin.com/in/alexbatesdev/' />
+                <ContactBadge Icon={GitHubIcon} text='Mcbuzzerr' url='https://github.com/mcbuzzerr' />
             </div>
 
         </div>

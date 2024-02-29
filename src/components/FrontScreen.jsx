@@ -2,6 +2,10 @@ import React from 'react';
 import MouseFollowEffect from './HexGlow';
 import IndexTopBar from './IndexTopBar';
 import { Typography, useTheme } from '@mui/material';
+import ContactBadge from './ContactBadge';
+import EmailIcon from '@mui/icons-material/Email';
+import GitHubIcon from '@mui/icons-material/GitHub';
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
 
 const FrontScreen = () => {
     const theme = useTheme();
@@ -254,6 +258,17 @@ const FrontScreen = () => {
                 }}>
                     I am a skilled fullstack developer with experience in frontend, backend, and devops. I have a passion for learning new technologies and solving complex problems.
                 </Typography>
+                <div style={{
+                    display: 'flex',
+                    flexDirection: 'row',
+                    justifyContent: 'center',
+                    alignItems: 'center',
+
+                }}>
+                    <ContactBadge Icon={LinkedInIcon} text='AlexBatesDev' url='https://www.linkedin.com/in/alexbatesdev/' forceStatus={false} />
+                    <ContactBadge Icon={EmailIcon} text='AlexBates.Dev@gmail.com' copyOnClick forceStatus={false} />
+                    <ContactBadge Icon={GitHubIcon} text='Mcbuzzerr' url='https://github.com/mcbuzzerr' forceStatus={false} />
+                </div>
             </div>
             <div id='slab-stack' style={{
                 zIndex: 1,
