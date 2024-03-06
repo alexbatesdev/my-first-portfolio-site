@@ -10,6 +10,8 @@ import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import FrontScreen from './components/FrontScreen'
 import { ToastContainer, Bounce } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import ProjectList from './components/ProjectList'
+import HexBackground from './components/HexBackground'
 
 export default function Home() {
   const theme = useTheme()
@@ -52,8 +54,8 @@ export default function Home() {
           </Typography>
           <Typography variant='h5' style={{
             color: "#e0e0ff",
-            textAlign: 'left',
-            width: '80%',
+            textAlign: 'justify',
+            width: '50%',
             fontSize: '1.25rem',
             marginBottom: '1rem',
           }}>
@@ -76,7 +78,30 @@ export default function Home() {
           }}>
           <TechStackPanel />
         </div>
-
+        <div
+          id="Projects"
+          style={{
+            backgroundColor: theme.palette.background.alternate,
+            width: "100%",
+            display: 'flex',
+            flexDirection: 'column',
+            justifyContent: 'flex-start',
+            alignItems: 'center',
+            zIndex: 1,
+            // padding: '1rem 0',
+          }}>
+          <HexBackground>
+            <Typography variant='h3' style={{
+              color: theme.palette.text.primary,
+              fontFamily: 'Teko',
+              textAlign: 'center',
+              margin: '1rem 0 0.7rem 0',
+            }}>
+              Projects
+            </Typography>
+            <ProjectList />
+          </HexBackground>
+        </div>
         <div
           id='Footer'
           style={{

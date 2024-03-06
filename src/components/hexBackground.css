@@ -12,7 +12,7 @@
     --starting-position: 0px 0px;
     --ending-position: 0px 0px;
     --background-size: 1920px 1080px;
-    background-image: url("/tiledIllusion.png");
+    background-image: url("/purpleIllusion.png");
     background-size: var(--background-size);
 }
 

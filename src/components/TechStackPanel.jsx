@@ -99,7 +99,7 @@ const TechStackPanel = () => {
                     highlight_color={
                         whichDomainIsHovered == 2 ? "#2bd01373" :
                             whichDomainIsHovered == 3 ? "#a8171778" : null} />
-                <TechBadge label='Docker' icon='/docker.svg'
+                <TechBadge label='Docker' icon='/docker-mark-blue.svg'
                     highlight_color={whichDomainIsHovered == 2 ? "#2bd01373" :
                         whichDomainIsHovered == 3 ? "#a8171778" : null} />
                 <TechBadge label='Kubernetes' icon='/k8s.svg'

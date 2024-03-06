@@ -149,7 +149,7 @@ const FrontScreen = () => {
                 },
                     slabHover === 3
                 )}>
-                    {slabHover === 3 && <img src='docker.svg' style={{
+                    {slabHover === 3 && <img src='docker-mark-blue.svg' style={{
                         width: '80%',
                         aspectRatio: '1/1',
                     }} />}

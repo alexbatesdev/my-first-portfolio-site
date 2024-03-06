@@ -7,8 +7,8 @@ const HexBackground = ({ children, style }) => {
     const ref = useRef(null);
 
     const syncBackgrounds = () => {
-        const backgroundWidth = 300;
-        const backgroundHeight = 280;
+        const backgroundWidth = 300 * 0.2;
+        const backgroundHeight = 525 * 0.2;
         const element = ref.current;
         if (element) {
             const elementRect = element.getBoundingClientRect();
