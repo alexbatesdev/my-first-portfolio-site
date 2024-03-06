@@ -9,7 +9,7 @@ const Project = ({ projectName, projectDescription, techIcons, githubLink, proje
     return (
         <div style={{
             backgroundColor: theme.palette.background.default,
-            minHeight: "300px",
+            minHeight: "270px",
             width: "42%",
             maxWidth: "650px",
             minWidth: "400px",
