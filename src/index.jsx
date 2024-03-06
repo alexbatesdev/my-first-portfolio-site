@@ -12,6 +12,7 @@ import { ToastContainer, Bounce } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import ProjectList from './components/ProjectList'
 import HexBackground from './components/HexBackground'
+import ExperienceTimeline from './components/ExperienceTimeline'
 
 export default function Home() {
   const theme = useTheme()
@@ -102,6 +103,19 @@ export default function Home() {
             <ProjectList />
           </HexBackground>
         </div>
+        {/* <div id="experience" style={{
+          width: "80%",
+        }}>
+          <Typography variant='h3' style={{
+            color: theme.palette.text.primary,
+            fontFamily: 'Teko',
+            textAlign: 'center',
+            margin: '1rem 0 0.7rem 0',
+          }}>
+            Experience
+          </Typography>
+          <ExperienceTimeline />
+        </div> */}
         <div
           id='Footer'
           style={{

@@ -98,7 +98,7 @@ const IndexTopBar = () => {
                     Projects
                 </Typography>
 
-                <Typography variant='body2'
+                {/* <Typography variant='body2'
                     onClick={() => window.location.href = "#Templates"}
                     sx={{
                         color: theme.palette.text.primary,
@@ -109,7 +109,7 @@ const IndexTopBar = () => {
                         }
                     }}>
                     Experience
-                </Typography>
+                </Typography> */}
 
             </div>
             <div style={{
