@@ -85,16 +85,13 @@ const TechStackPanel = () => {
                 flexWrap: 'wrap',
             }}>
                 <TechBadge label='React' icon='/react.svg'
-                    source={'https://2022.stateofjs.com/en-US/libraries/front-end-frameworks/'}
                     source_name={'State of JS'}
                     highlight_color={whichDomainIsHovered == 1 ? "#486ee269" : null} />
                 <TechBadge label='Next.JS' icon='/next-js.svg'
-                    source={'https://2022.stateofjs.com/en-US/libraries/rendering-frameworks/'}
                     source_name={'State of JS'}
                     highlight_color={whichDomainIsHovered == 1 ? "#486ee269" :
                         whichDomainIsHovered == 2 ? "#2bd01373" : null} />
                 <TechBadge label='AWS' icon='/aws.svg'
-                    source={"https://www.statista.com/chart/18819/worldwide-market-share-of-leading-cloud-infrastructure-service-providers/"}
                     source_name={"Statista"}
                     highlight_color={
                         whichDomainIsHovered == 2 ? "#2bd01373" :
