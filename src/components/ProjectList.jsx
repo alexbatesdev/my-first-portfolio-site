@@ -113,7 +113,7 @@ const ProjectList = () => {
                 projectName='Webbie the Web IDE'
                 projectDescription='Webbie is a web IDE that lets you develop and share web projects from your browser. Kickstart your projects anywhere by starting with one of several js framework templates. Iterate with speed using the live preview that runs a local dev server live in your browser!'
                 projectLink='https://webbie-frontend.fly.dev'
-                githubLink='https://github.com/Mcbuzzerr/Neumont-Capstone'
+                githubLink='https://github.com/alexbatesdev/Neumont-Capstone'
                 techIcons={[
                     '/next-js.svg',
                     '/react.svg',
@@ -126,7 +126,7 @@ const ProjectList = () => {
                 projectName='Kubernetes + Helm Demo'
                 projectDescription='This is a proof of concept kubernetes + helm cluster that runs and tests a dotnet framework api. Included is a readme that explains the entire process of setting up the cluster and running the tests.'
                 projectLink=''
-                githubLink='https://github.com/Mcbuzzerr/Kubernetes-Helm-Proof-of-Concept'
+                githubLink='https://github.com/alexbatesdev/Kubernetes-Helm-Proof-of-Concept'
                 techIcons={[
                     '/k8s.svg',
                     '/dotnet-logo.svg',
@@ -137,7 +137,7 @@ const ProjectList = () => {
                 projectName='Daily Checkers'
                 projectDescription="Daily Checkers is a checkers service orchestrated with AWS python lambdas deployed with aws sam. With this project I also wanted to challenge myself to a retro style so I didn't use any frontend frameworks. I liked this idea enough that I have decided to keep working on it outside of school."
                 projectLink='https://daily-checkers.nekoweb.org'
-                githubLink='https://github.com/Mcbuzzerr/daily-checkers'
+                githubLink='https://github.com/alexbatesdev/daily-checkers'
                 techIcons={[
                     '/aws.svg',
                     '/python.svg',
@@ -150,7 +150,7 @@ const ProjectList = () => {
                 projectName='Stitch - Stuffed Animal Dating App'
                 projectDescription='Stitch is a mock dating app targeted at stuffed animals. The backend follows a micro-service architecture comprised of fastapi and dotnet services. The frontend is a nextJS application that features realtime swiping and messaging using signalR.'
                 projectLink=''
-                githubLink='https://github.com/Mcbuzzerr/stuffed-animal-dating-app'
+                githubLink='https://github.com/alexbatesdev/stuffed-animal-dating-app'
                 techIcons={[
                     '/next-js.svg',
                     '/react.svg',

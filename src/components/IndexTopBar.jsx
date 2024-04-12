@@ -60,7 +60,7 @@ const IndexTopBar = () => {
                 gap: '2rem',
             }}>
                 <Typography variant='body2'
-                    onClick={() => window.location.href = "/editor/3"}
+                    onClick={() => window.location.href = "#About"}
                     sx={{
                         color: theme.palette.text.primary,
                         cursor: 'pointer',
@@ -73,7 +73,7 @@ const IndexTopBar = () => {
                 </Typography>
 
                 <Typography variant='body2'
-                    onClick={() => window.location.href = "/editor/3"}
+                    onClick={() => window.location.href = "#TechStack"}
                     sx={{
                         color: theme.palette.text.primary,
                         cursor: 'pointer',
@@ -86,7 +86,7 @@ const IndexTopBar = () => {
                 </Typography>
 
                 <Typography variant='body2'
-                    onClick={() => window.location.href = "#TechStack"}
+                    onClick={() => window.location.href = "#Projects"}
                     sx={{
                         color: theme.palette.text.primary,
                         cursor: 'pointer',
@@ -121,7 +121,7 @@ const IndexTopBar = () => {
             }}>
                 <ContactBadge Icon={EmailIcon} text='AlexBates.Dev@gmail.com' copyOnClick />
                 <ContactBadge Icon={LinkedInIcon} text='AlexBatesDev' url='https://www.linkedin.com/in/alexbatesdev/' />
-                <ContactBadge Icon={GitHubIcon} text='Mcbuzzerr' url='https://github.com/mcbuzzerr' />
+                <ContactBadge Icon={GitHubIcon} text='AlexBatesDev' url='https://github.com/alexbatesdev' />
             </div>
 
         </div>

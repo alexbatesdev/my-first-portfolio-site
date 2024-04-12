@@ -123,6 +123,8 @@ const TechStackPanel = () => {
                 <TechBadge label='TypeScript' icon='/typescript.svg'
                     highlight_color={whichDomainIsHovered == 1 ? "#486ee269" :
                         whichDomainIsHovered == 2 ? "#2bd01373" : null} />
+                <TechBadge label='Angular' icon='/angular.svg'
+                    highlight_color={whichDomainIsHovered == 1 ? "#486ee269" : null} />
                 <TechBadge label='Python' icon='/python.svg'
                     highlight_color={whichDomainIsHovered == 2 ? "#2bd01373" : null} />
                 <TechBadge label='MySQL' icon='/mysql.webp'

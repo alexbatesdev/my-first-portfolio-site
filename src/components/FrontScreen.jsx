@@ -267,7 +267,7 @@ const FrontScreen = () => {
                 }}>
                     <ContactBadge Icon={LinkedInIcon} text='AlexBatesDev' url='https://www.linkedin.com/in/alexbatesdev/' forceStatus={false} />
                     <ContactBadge Icon={EmailIcon} text='AlexBates.Dev@gmail.com' copyOnClick forceStatus={false} />
-                    <ContactBadge Icon={GitHubIcon} text='Mcbuzzerr' url='https://github.com/mcbuzzerr' forceStatus={false} />
+                    <ContactBadge Icon={GitHubIcon} text='AlexBatesDev' url='https://github.com/alexbatesdev' forceStatus={false} />
                 </div>
             </div>
             <div id='slab-stack' style={{
