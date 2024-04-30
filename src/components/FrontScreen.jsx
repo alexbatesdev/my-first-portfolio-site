@@ -34,10 +34,11 @@ const FrontScreen = () => {
     React.useEffect(() => {
         const cycleIds = [0, 1, 2, 3];
         let index = slabHover;
+        setSlabHover(cycleIds[index]);
         const intervalId = setInterval(() => {
             if (!isHovering) {
-                setSlabHover(cycleIds[index]);
                 index = (index + 1) % cycleIds.length;
+                setSlabHover(cycleIds[index]);
             }
         }, 2500);
 
