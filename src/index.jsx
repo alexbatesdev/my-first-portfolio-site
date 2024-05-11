@@ -20,8 +20,6 @@ export default function Home() {
   const screenWidth = useWindowSize();
   const breakpoint = 700;
 
-
-
   return (
     <>
       <div style={{
@@ -133,9 +131,9 @@ export default function Home() {
           <Typography variant='h4' color={theme.palette.text.primary} fontFamily={"Teko"} sx={{ pr: 1, ml: 2 }}>
             Contact:
           </Typography>
-          <ContactBadge forceStatus={true} Icon={GitHubIcon} text='AlexBatesDev' url='https://github.com/alexbatesdev' />
-          <ContactBadge forceStatus={true} Icon={LinkedInIcon} text='AlexBatesDev' url='https://www.linkedin.com/in/alexbatesdev/' />
-          <ContactBadge forceStatus={true} Icon={EmailIcon} text='AlexBates.Dev@gmail.com' copyOnClick />
+          <ContactBadge forceStatus={screenWidth > breakpoint ? true : false} Icon={GitHubIcon} text='AlexBatesDev' url='https://github.com/alexbatesdev' />
+          <ContactBadge forceStatus={screenWidth > breakpoint ? true : false} Icon={LinkedInIcon} text='AlexBatesDev' url='https://www.linkedin.com/in/alexbatesdev/' />
+          <ContactBadge forceStatus={screenWidth > breakpoint ? true : false} Icon={EmailIcon} text='AlexBates.Dev@gmail.com' copyOnClick />
           <Typography variant='h5' color={theme.palette.primary.main} fontFamily={"Teko"} style={{
             marginLeft: 'auto',
             marginRight: '1rem',

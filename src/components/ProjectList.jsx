@@ -1,18 +1,20 @@
 import { Button, Typography, useTheme } from '@mui/material';
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { useWindowSize } from '../utils/hooks';
 
 const Project = ({ projectName, projectDescription, techIcons, githubLink, projectLink = "" }) => {
     const theme = useTheme();
     const [buttonHover, setButtonHover] = React.useState(0);
+    const screenWidth = useWindowSize();
+    const breakpoint = 500;
 
     return (
         <div style={{
             backgroundColor: theme.palette.background.default,
-            minHeight: "270px",
-            width: "42%",
+            width: screenWidth > breakpoint ? "42%" : "85%",
             maxWidth: "650px",
-            minWidth: "400px",
+            minWidth: screenWidth > breakpoint ? "400px" : "200px",
             border: "1px solid black",
             borderRadius: "7px",
             display: "flex",
@@ -84,13 +86,35 @@ const Project = ({ projectName, projectDescription, techIcons, githubLink, proje
                         }} />
                     </Button>
                 </Link>
-                {techIcons.map(img_source => {
-                    return (<img src={img_source} id={img_source} style={{
-                        height: "45px",
-                        position: "relative",
-                        top: "-0.3rem"
-                    }} alt="Project Logo" />)
-                })}
+                {screenWidth > breakpoint ? (
+                    techIcons.map(img_source => {
+                        return (<img src={img_source} id={img_source} style={{
+                            height: "45px",
+                            position: "relative",
+                            top: "-0.3rem"
+                        }} alt="Project Logo" />)
+                    })
+                ) : (
+                    <span style={{
+                        display: "flex",
+                        flexDirection: "row",
+                        justifyContent: "flex-start",
+                        alignItems: "center",
+                        gap: "1rem",
+                        minHeight: "50px",
+                        width: "100%",
+                        marginTop: "auto",
+                        flexWrap: "wrap"
+                    }}>
+                        {techIcons.map(img_source => {
+                            return (<img src={img_source} id={img_source} style={{
+                                height: "45px",
+                                position: "relative",
+                                top: "-0.3rem"
+                            }} alt="Project Logo" />)
+                        })}
+                    </span>
+                )}
             </div>
         </div >
     );
@@ -104,10 +128,11 @@ const ProjectList = () => {
             display: "flex",
             flexDirection: "row",
             justifyContent: "center",
-            alignItems: "center",
+            alignItems: "stretch",
             gap: "1rem",
             paddingBottom: "3rem",
             flexWrap: "wrap",
+
         }}>
             <Project
                 projectName='Webbie the Web IDE'

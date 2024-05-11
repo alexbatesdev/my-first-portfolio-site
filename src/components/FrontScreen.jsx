@@ -14,6 +14,7 @@ const FrontScreen = () => {
     const [isHovering, setIsHovering] = React.useState(false);
     const screenWidth = useWindowSize();
     const breakpoint = 600;
+    const slab_stack_breakpoint = 750;
 
     const techCardStyle = (position, active) => {
         const alt_breakpoint = 530;
@@ -285,6 +286,7 @@ const FrontScreen = () => {
                 <Typography variant='h6' style={{
                     color: theme.palette.text.primary,
                     minWidth: screenWidth > breakpoint ? '550px' : '0px',
+                    maxWidth: '600px',
                 }}>
                     I am a skilled fullstack developer with experience in frontend, backend, and devops. I have a passion for learning new technologies and solving complex problems.
                 </Typography>
@@ -299,108 +301,109 @@ const FrontScreen = () => {
                     <ContactBadge Icon={GitHubIcon} text='AlexBatesDev' url='https://github.com/alexbatesdev' forceStatus={false} />
                 </div>
             </div>
-            {screenWidth > breakpoint && (
-                <div id='slab-stack' style={{
-                    zIndex: 1,
-                    position: 'relative',
-                    display: 'flex',
-                    flexDirection: 'column',
-                    justifyContent: 'center',
-                    alignItems: 'center',
-                    flexGrow: 1,
-                }}>
-                    <div
-                        style={{
-                            width: '500px',
-                            animation: 'floatFrontend 6s ease-in-out infinite',
-                            position: 'relative',
-                            bottom: '-150px',
-                            zIndex: 3,
-                            clipPath: 'polygon(45% 0, 55% 0, 100% 45%, 100% 60%, 55% 100%, 45% 100%, 0 60%, 0 45%)',
-                        }}
-                        onMouseEnter={() => handleMouseEnter(0)}
-                        onMouseLeave={handleMouseLeave}
-                    >
-                        <img src={'/activeBlueSlab.png'}
-                            style={{
-                                width: '500px',
-                                transition: 'opacity 0.3s ease-in-out',
-                                opacity: slabHover == 0 || slabHover == 3 ? 1 : 0,
-                            }}
-                        />
-                        <img src={'/inactiveBlueSlab.png'}
-                            style={{
-                                width: '500px',
-                                position: 'absolute',
-                                top: 0,
-                                left: 0,
-                                transition: 'opacity 0.3s ease-in-out',
-                                opacity: slabHover == 0 || slabHover == 3 ? 0 : 1,
-                            }}
-                        />
-                    </div>
-                    <div
-                        style={{
-                            width: '500px',
-                            animation: 'floatBackend 4s ease-in-out infinite',
-                            zIndex: 2,
-                            position: 'relative',
-                            clipPath: 'polygon(45% 0, 55% 0, 100% 45%, 100% 60%, 55% 100%, 45% 100%, 0 60%, 0 45%)',
-                        }}
-                        onMouseEnter={() => handleMouseEnter(1)}
-                        onMouseLeave={handleMouseLeave}
-                    >
-                        <img src={'/activeGreenSlab.png'}
-                            style={{
-                                width: '500px',
-                                transition: 'opacity 0.3s ease-in-out',
-                                opacity: slabHover == 1 || slabHover == 3 ? 1 : 0,
-                            }}
-                        />
-                        <img src={'/inactiveBlueSlab.png'}
-                            style={{
-                                width: '500px',
-                                position: 'absolute',
-                                top: 0,
-                                left: 0,
-                                transition: 'opacity 0.3s ease-in-out',
-                                opacity: slabHover == 1 || slabHover == 3 ? 0 : 1,
-                            }}
-                        />
-                    </div>
-                    <div style={{
+            <div id='slab-stack' style={{
+                zIndex: 0,
+                position: screenWidth > slab_stack_breakpoint ? 'relative' : 'absolute',
+                top: screenWidth > slab_stack_breakpoint ? 0 : '50%',
+                left: screenWidth > slab_stack_breakpoint ? "-3%" : '50%',
+                transform: screenWidth > slab_stack_breakpoint ? 'none' : 'translate(-50%, -50%)',
+                display: 'flex',
+                flexDirection: 'column',
+                justifyContent: 'center',
+                alignItems: 'center',
+                flexGrow: 1,
+            }}>
+                <div
+                    style={{
                         width: '500px',
-                        animation: 'floatDevops 5s ease-in-out infinite',
+                        animation: 'floatFrontend 6s ease-in-out infinite',
                         position: 'relative',
-                        top: '-150px',
-                        zIndex: 1,
+                        bottom: '-150px',
+                        zIndex: 3,
                         clipPath: 'polygon(45% 0, 55% 0, 100% 45%, 100% 60%, 55% 100%, 45% 100%, 0 60%, 0 45%)',
                     }}
-                        onMouseEnter={() => handleMouseEnter(2)}
-                        onMouseLeave={handleMouseLeave}
-                    >
-                        <img src={'/activeRedSlab.png'}
-                            style={{
-                                width: '500px',
-                                zIndex: 1,
-                                transition: 'opacity 0.3s ease-in-out',
-                                opacity: slabHover == 2 || slabHover == 3 ? 1 : 0,
-                            }}
-                        />
-                        <img src={'/inactiveBlueSlab.png'}
-                            style={{
-                                width: '500px',
-                                zIndex: 1,
-                                position: 'absolute',
-                                top: 0,
-                                left: 0,
-                                transition: 'opacity 0.3s ease-in-out',
-                                opacity: slabHover == 2 || slabHover == 3 ? 0 : 1,
-                            }}
-                        />
-                    </div>
+                    onMouseEnter={() => handleMouseEnter(0)}
+                    onMouseLeave={handleMouseLeave}
+                >
+                    <img src={'/activeBlueSlab.png'}
+                        style={{
+                            width: '500px',
+                            transition: 'opacity 0.3s ease-in-out',
+                            opacity: slabHover == 0 || slabHover == 3 ? 1 : 0,
+                        }}
+                    />
+                    <img src={'/inactiveBlueSlab.png'}
+                        style={{
+                            width: '500px',
+                            position: 'absolute',
+                            top: 0,
+                            left: 0,
+                            transition: 'opacity 0.3s ease-in-out',
+                            opacity: slabHover == 0 || slabHover == 3 ? 0 : 1,
+                        }}
+                    />
                 </div>
-            )}
+                <div
+                    style={{
+                        width: '500px',
+                        animation: 'floatBackend 4s ease-in-out infinite',
+                        zIndex: 2,
+                        position: 'relative',
+                        clipPath: 'polygon(45% 0, 55% 0, 100% 45%, 100% 60%, 55% 100%, 45% 100%, 0 60%, 0 45%)',
+                    }}
+                    onMouseEnter={() => handleMouseEnter(1)}
+                    onMouseLeave={handleMouseLeave}
+                >
+                    <img src={'/activeGreenSlab.png'}
+                        style={{
+                            width: '500px',
+                            transition: 'opacity 0.3s ease-in-out',
+                            opacity: slabHover == 1 || slabHover == 3 ? 1 : 0,
+                        }}
+                    />
+                    <img src={'/inactiveBlueSlab.png'}
+                        style={{
+                            width: '500px',
+                            position: 'absolute',
+                            top: 0,
+                            left: 0,
+                            transition: 'opacity 0.3s ease-in-out',
+                            opacity: slabHover == 1 || slabHover == 3 ? 0 : 1,
+                        }}
+                    />
+                </div>
+                <div style={{
+                    width: '500px',
+                    animation: 'floatDevops 5s ease-in-out infinite',
+                    position: 'relative',
+                    top: '-150px',
+                    zIndex: 1,
+                    clipPath: 'polygon(45% 0, 55% 0, 100% 45%, 100% 60%, 55% 100%, 45% 100%, 0 60%, 0 45%)',
+                }}
+                    onMouseEnter={() => handleMouseEnter(2)}
+                    onMouseLeave={handleMouseLeave}
+                >
+                    <img src={'/activeRedSlab.png'}
+                        style={{
+                            width: '500px',
+                            zIndex: 1,
+                            transition: 'opacity 0.3s ease-in-out',
+                            opacity: slabHover == 2 || slabHover == 3 ? 1 : 0,
+                        }}
+                    />
+                    <img src={'/inactiveBlueSlab.png'}
+                        style={{
+                            width: '500px',
+                            zIndex: 1,
+                            position: 'absolute',
+                            top: 0,
+                            left: 0,
+                            transition: 'opacity 0.3s ease-in-out',
+                            opacity: slabHover == 2 || slabHover == 3 ? 0 : 1,
+                        }}
+                    />
+                </div>
+            </div>
         </div>
     );
 };
