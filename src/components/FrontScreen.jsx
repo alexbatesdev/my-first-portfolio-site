@@ -312,6 +312,8 @@ const FrontScreen = () => {
                 justifyContent: 'center',
                 alignItems: 'center',
                 flexGrow: 1,
+                maxWidth: "100vw",
+                overflow: 'hidden',
             }}>
                 <div
                     style={{
