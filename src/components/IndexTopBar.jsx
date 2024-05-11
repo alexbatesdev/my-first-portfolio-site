@@ -1,28 +1,11 @@
-// This code was written by an AI assistant
+// This code was written with the help of an AI assistant
 import React, { useState, useEffect } from 'react';
 import { useTheme, Typography } from '@mui/material';
 import ContactBadge from './ContactBadge';
 import EmailIcon from '@mui/icons-material/Email';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
-
-// Custom hook for detecting window size
-function useWindowSize() {
-    const [size, setSize] = useState(window.innerWidth);
-
-    useEffect(() => {
-        const handleResize = () => {
-            setSize(window.innerWidth);
-        };
-
-        window.addEventListener('resize', handleResize);
-        return () => {
-            window.removeEventListener('resize', handleResize);
-        };
-    }, []);
-
-    return size;
-}
+import { useWindowSize } from '../utils/hooks'
 
 const IndexTopBar = () => {
     const theme = useTheme();
@@ -118,4 +101,3 @@ const IndexTopBar = () => {
 }
 
 export default IndexTopBar;
-// This code was written by an AI assistant
