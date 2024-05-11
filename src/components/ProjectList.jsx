@@ -85,7 +85,7 @@ const Project = ({ projectName, projectDescription, techIcons, githubLink, proje
                     </Button>
                 </Link>
                 {techIcons.map(img_source => {
-                    return (<img src={img_source} style={{
+                    return (<img src={img_source} id={img_source} style={{
                         height: "45px",
                         position: "relative",
                         top: "-0.3rem"

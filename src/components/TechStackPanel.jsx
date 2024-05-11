@@ -2,11 +2,14 @@ import React, { useEffect, useRef } from 'react'
 import { useTheme } from '@emotion/react'
 import { Typography, Link } from '@mui/material';
 import TechBadge from './TechBadge';
+import { useWindowSize } from '../utils/hooks';
 
 const TechStackPanel = () => {
     const theme = useTheme();
     const [whichDomainIsHovered, setWhichDomainIsHovered] = React.useState(0);
     const [selectedDomain, setSelectedDomain] = React.useState(0);
+    const screenWidth = useWindowSize();
+    const breakpoint = 450;
 
     const handleMouseEnter = (domain) => {
         setWhichDomainIsHovered(domain);
@@ -51,6 +54,8 @@ const TechStackPanel = () => {
                         transition: "all 0.3s ease-in-out",
                         cursor: "pointer",
                         boxShadow: "0px 0px 7px -3px black",
+                        textWrap: 'nowrap',
+                        fontSize: screenWidth > breakpoint ? '1.8rem' : '1.2rem',
                     }}>
                     Front-End
                 </Typography>
@@ -66,6 +71,8 @@ const TechStackPanel = () => {
                         transition: "all 0.3s ease-in-out",
                         cursor: "pointer",
                         boxShadow: "0px 0px 7px -3px black",
+                        textWrap: 'nowrap',
+                        fontSize: screenWidth > breakpoint ? '1.8rem' : '1.2rem',
                     }}>
                     Back-End
                 </Typography>
@@ -81,6 +88,8 @@ const TechStackPanel = () => {
                         transition: "all 0.3s ease-in-out",
                         cursor: "pointer",
                         boxShadow: "0px 0px 7px -3px black",
+                        textWrap: 'nowrap',
+                        fontSize: screenWidth > breakpoint ? '1.8rem' : '1.2rem',
                     }}>
                     DevOps
                 </Typography>
@@ -92,7 +101,7 @@ const TechStackPanel = () => {
                 alignItems: 'center',
                 padding: '10px',
                 gap: '1rem',
-                width: "60%",
+                width: screenWidth > breakpoint ? "100%" : "100%",
                 flexWrap: 'wrap',
             }}>
                 <TechBadge label='React' icon='/react.svg'

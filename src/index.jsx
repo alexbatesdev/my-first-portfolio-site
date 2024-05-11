@@ -13,9 +13,12 @@ import 'react-toastify/dist/ReactToastify.css';
 import ProjectList from './components/ProjectList'
 import HexBackground from './components/HexBackground'
 import ExperienceTimeline from './components/ExperienceTimeline'
+import { useWindowSize } from './utils/hooks'
 
 export default function Home() {
   const theme = useTheme()
+  const screenWidth = useWindowSize();
+  const breakpoint = 700;
 
 
 
@@ -56,7 +59,7 @@ export default function Home() {
           <Typography variant='h5' style={{
             color: "#e0e0ff",
             textAlign: 'justify',
-            width: '50%',
+            width: screenWidth > breakpoint ? "50%" : "80%",
             fontSize: '1.25rem',
             marginBottom: '1rem',
           }}>
