@@ -315,7 +315,7 @@ const FrontScreen = () => {
             }}>
                 <div
                     style={{
-                        width: '500px',
+                        width: screenWidth > slab_stack_breakpoint ? '500px' : "400px",
                         animation: 'floatFrontend 6s ease-in-out infinite',
                         position: 'relative',
                         bottom: '-150px',
@@ -327,14 +327,14 @@ const FrontScreen = () => {
                 >
                     <img src={'/activeBlueSlab.png'}
                         style={{
-                            width: '500px',
+                            width: '100%',
                             transition: 'opacity 0.3s ease-in-out',
                             opacity: slabHover == 0 || slabHover == 3 ? 1 : 0,
                         }}
                     />
                     <img src={'/inactiveBlueSlab.png'}
                         style={{
-                            width: '500px',
+                            width: '100%',
                             position: 'absolute',
                             top: 0,
                             left: 0,
@@ -345,7 +345,7 @@ const FrontScreen = () => {
                 </div>
                 <div
                     style={{
-                        width: '500px',
+                        width: screenWidth > slab_stack_breakpoint ? '500px' : "400px",
                         animation: 'floatBackend 4s ease-in-out infinite',
                         zIndex: 2,
                         position: 'relative',
@@ -356,14 +356,14 @@ const FrontScreen = () => {
                 >
                     <img src={'/activeGreenSlab.png'}
                         style={{
-                            width: '500px',
+                            width: '100%',
                             transition: 'opacity 0.3s ease-in-out',
                             opacity: slabHover == 1 || slabHover == 3 ? 1 : 0,
                         }}
                     />
                     <img src={'/inactiveBlueSlab.png'}
                         style={{
-                            width: '500px',
+                            width: '100%',
                             position: 'absolute',
                             top: 0,
                             left: 0,
@@ -373,7 +373,7 @@ const FrontScreen = () => {
                     />
                 </div>
                 <div style={{
-                    width: '500px',
+                    width: screenWidth > slab_stack_breakpoint ? '500px' : "400px",
                     animation: 'floatDevops 5s ease-in-out infinite',
                     position: 'relative',
                     top: '-150px',
@@ -385,7 +385,7 @@ const FrontScreen = () => {
                 >
                     <img src={'/activeRedSlab.png'}
                         style={{
-                            width: '500px',
+                            width: '100%',
                             zIndex: 1,
                             transition: 'opacity 0.3s ease-in-out',
                             opacity: slabHover == 2 || slabHover == 3 ? 1 : 0,
@@ -393,7 +393,7 @@ const FrontScreen = () => {
                     />
                     <img src={'/inactiveBlueSlab.png'}
                         style={{
-                            width: '500px',
+                            width: '100%',
                             zIndex: 1,
                             position: 'absolute',
                             top: 0,
