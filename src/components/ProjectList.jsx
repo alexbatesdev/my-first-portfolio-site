@@ -137,7 +137,7 @@ const ProjectList = () => {
             <Project
                 projectName='Webbie the Web IDE'
                 projectDescription='Webbie is a web IDE that lets you develop and share web projects from your browser. Kickstart your projects anywhere by starting with one of several js framework templates. Iterate with speed using the live preview that runs a local dev server live in your browser!'
-                projectLink='https://webbie-frontend.fly.dev'
+                projectLink=''
                 githubLink='https://github.com/alexbatesdev/Neumont-Capstone'
                 techIcons={[
                     '/next-js.svg',
@@ -161,7 +161,7 @@ const ProjectList = () => {
             <Project
                 projectName='Daily Checkers'
                 projectDescription="Daily Checkers is a checkers service orchestrated with AWS python lambdas deployed with aws sam. With this project I also wanted to challenge myself to a retro style so I didn't use any frontend frameworks. I liked this idea enough that I have decided to keep working on it outside of school."
-                projectLink='https://daily-checkers.nekoweb.org'
+                projectLink=''
                 githubLink='https://github.com/alexbatesdev/daily-checkers'
                 techIcons={[
                     '/aws.svg',
